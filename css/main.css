@@ -1,0 +1,22 @@
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.sub-menu-list {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    visibility: hidden;
+}
+
+p{
+    background-color: orange;
+    cursor: pointer;
+    
+}
+nav {
+    background-color: bisque;
+}
