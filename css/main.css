@@ -20,3 +20,29 @@ p{
 nav {
     background-color: bisque;
 }
+
+#mobile-menu {
+   
+}
+
+.mobile-menu-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-inline-start: 0px;
+    height: 50px;
+    align-items: center;
+    
+}
+
+.mobile-menu-list-item {
+    background-color: aqua;
+    border-radius: 20px;
+    padding: 10px;
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+    background-color: aquamarine;
+}
