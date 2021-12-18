@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mobileMenuChoices = document.querySelectorAll('.choice')
     mobileMenuChoices.forEach(function(choice) {choice.addEventListener('click', handleChoice)})
+
+    let currentSlideIndex = 1;
+    showSlides(currentSlideIndex);
     
 })
 
@@ -58,4 +61,40 @@ const handleChoice = function (event) {
     mobileMenu.style.backgroundColor = null;
     mobileMenu.style.borderRadius = null;
     
+}
+
+const showSlides = function(index) {
+    let slideIndex = index;
+    const slides = document.querySelectorAll('.mySlides')
+    const dots = document.querySelectorAll('.dot')
+    if (index > slides.length) {
+        slideIndex = 1
+    }
+    if (index < 1) {slideIndex = slides.length}
+    for (let slide of slides) {
+        slide.style.display = 'none'
+    }
+    slides[slideIndex-1].style.display = 'block';
+
+    
+}
+
+const plusSlides = function(n) {
+    let slideIndex = getCurrentSlide();
+    showSlides(slideIndex += n);
+}
+
+const currentSlide = function(n) {
+    showSlides(n)
+}
+
+const getCurrentSlide = function() {
+    const slides = document.querySelectorAll('.mySlides')
+    let currentSlide;
+    for (let slide of slides) {
+        if (slide.style.display === 'block') {
+            currentSlide = slide;
+        }
+    }
+    return parseInt(currentSlide.id)
 }
